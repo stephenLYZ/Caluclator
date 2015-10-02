@@ -20,12 +20,7 @@ function typeValue(num){
 //定义'00'
 function doublezero(){
 	var str = String(document.getElementById("numScreen").value);
-	if(str!= "0" && judge == 0) {
-		return str + "00";  //这里和上面有区别
-	}
-	else{
-		str = "";
-	} 
+	str = (str!="0") ? ((judge==0) ? str + "00": "") : "";
 	document.getElementById("numScreen").value = str; //刷新当前数据
 	judge = 0;
 }
@@ -33,12 +28,8 @@ function doublezero(){
 //定义小数点
 function dot(){
 	var str = String(document.getElementById("numScreen").value);
-	if(str!= "0" && judge == 0) {
-		return str;
-	}
-	else{
-		str = "";
-	} 
+	str = (str!="0") ? ((judge==0) ? str : "") : "";
+
 	//遍历所有位数
 	for(var i = 0 ; i <= str.length ; i++){
 		//判断是否已有一个点,用substr()函数还是相对更聪明的
