@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calculator</title>
+	<style type="text/css">
+	body{
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		background: #99CC67;
+		font-family:Arial, Georgia, "Times New Roman", Times, serif; 
+	}
+	#calculator{
+		width: 400px;
+		height: 500px;
+		margin: 50px auto;
+		border: #fff 2px solid;
+		background-color: #E1CD96;
+		border-radius: 2px;
+	}
+	.cal-header{
+		line-height: 70px;
+		font-size: 30px;
+	}
+	.cal-screen #numScreen{
+		text-align: right;
+		width: 90%;
+		height: 50px;
+		font-size: 30px;
+		border-radius: 3px;
+		border: #fff 1px solid; 
+	}
+	.cal-prompt{
+		width: 90%;
+		height: 30px;
+	}
+	.cal-button ul{
+		border: 1px #fff solid;
+		border-radius: 3px;
+		margin: 20px 20px;
+		padding: 5px;
+	}
+	.cal-button li {
+		list-style: none;
+		display: inline-block;
+		line-height: 50px;
+		width: 60px;
+		background-color: #eaeaea;
+		margin: 10px 2px;
+		font-size: 30px;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+	.cal-button li:hover{
+		background: #f9f9f9;
+	}
+	
+	</style>
+</head>
+<body>
+	<div id="calculator">
+		<span class="cal-header">简易计算器</span>
+		<div class="cal-screen">
+			<!--使用onfocus="this.blur;"避免键盘输入-->
+			<input type="text" id="numScreen" value="0" onfocus="this.blur();"/> 
+		</div>
+		<!--提示-->
+		<div class="cal-prompt">
+			<span id="prompt"></span>
+		</div>
+		<!--输入按钮-->
+		<div class="cal-button">
+			<ul>
+				<li onclick = "typeValue(7)">7</li>
+				<li onclick = "typeValue(8)">8</li>
+				<li onclick = "typeValue(9)">9</li>
+				<li onclick = "del()">del</li>
+				<li onclick = "clearAll()">C</li>
+				<li onclick = "typeValue(4)">4</li>
+				<li onclick = "typeValue(5)">5</li>
+				<li onclick = "typeValue(6)">6</li>
+				<li onclick = "times()">*</li>
+				<li onclick = "divide()">/</li>
+				<li onclick = "typeValue(1)">1</li>
+				<li onclick = "typeValue(2)">2</li>
+				<li onclick = "typeValue(3)">3</li>
+				<li onclick = "plus()">+</li>
+				<li onclick = "minus()">-</li>
+				<li onclick = "typeValue(0)">0</li>
+				<li onclick = "doublezero()">00</li>
+				<li onclick = "dot()">.</li>
+				<li onclick = "persent()">%</li>
+				<li onclick = "equal()">=</li>
+			</ul>
+		</div>
+		<!--提示-->
+		<div class="cal-prompt">
+			<span id="prompt"></span>
+		</div>
+	</div>
+	<script type="text/javascript" src="calculator.js"></script>
+</body>
+</html>
