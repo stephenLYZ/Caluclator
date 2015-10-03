@@ -13,57 +13,71 @@
 	}
 	#calculator{
 		width: 400px;
-		height: 500px;
+		height:470px;
 		margin: 50px auto;
-		border: #fff 2px solid;
-		background-color: #E1CD96;
-		border-radius: 2px;
+		background-color: #72CAF0;
+		border-radius: 14px;
+		text-align: center;
 	}
-	.cal-header{
-		line-height: 70px;
-		font-size: 30px;
+	.cal-screen{
+		background-color: #4c5155;
+		height: 110px;
+		border-radius: 14px 14px 0 0;
 	}
 	.cal-screen #numScreen{
 		text-align: right;
-		width: 90%;
-		height: 50px;
-		font-size: 30px;
-		border-radius: 3px;
-		border: #fff 1px solid; 
+		margin: 20px auto;
+		width: 83%;
+		height: 60%;
+		padding-right: 10px;
+		background-color: #72CAF0;
+		font-size: 35px;
+		border-radius: 14px;
+		border: transparent;
 	}
 	.cal-prompt{
 		width: 90%;
-		height: 30px;
-		line-height: 30px;
+		height: 20px;
+		line-height: 20px;
 		text-align: right;
 		color: red;
 	}
 	.cal-button ul{
-		border: 1px #fff solid;
-		border-radius: 3px;
-		margin: 20px 20px;
-		padding: 5px;
+		padding:0 5px;
 	}
 	.cal-button li {
 		list-style: none;
 		display: inline-block;
 		line-height: 50px;
 		width: 60px;
-		background-color: #eaeaea;
-		margin: 10px 2px;
-		font-size: 30px;
-		border-radius: 4px;
+		background-color: #FFC665;
+		color:rgba(255,255,255,0.8);
+		margin: 13px 2px;
+		font-size: 40px;
+		border-radius: 10px;
 		cursor: pointer;
 	}
 	.cal-button li:hover{
-		background: #f9f9f9;
+		background: #FFa555;
+		color: rgba(255,255,255,1);
 	}
-	
+	.cal-button .delet{
+		background-color: #FFB6C1;
+	}
+	.cal-button .calcul{
+		background-color:#fff;
+		color:  #4c5155;
+	}
+	.cal-button .delet:hover{
+		background: red;
+	}
+	.cal-button .calcul:hover{
+		background: gray;
+	}
 	</style>
 </head>
 <body>
 	<div id="calculator">
-		<span class="cal-header">简易计算器</span>
 		<div class="cal-screen">
 			<!--使用onfocus="this.blur;"避免键盘输入-->
 			<input type="text" id="numScreen" value="0" onfocus="this.blur();"/> 
@@ -78,23 +92,23 @@
 				<li onclick = "typeValue(7)">7</li>
 				<li onclick = "typeValue(8)">8</li>
 				<li onclick = "typeValue(9)">9</li>
-				<li onclick = "del()">del</li>
-				<li onclick = "clearAll()">C</li>
+				<li class="delet" onclick = "del()">del</li>
+				<li class="delet" onclick = "clearAll()">C</li>
 				<li onclick = "typeValue(4)">4</li>
 				<li onclick = "typeValue(5)">5</li>
 				<li onclick = "typeValue(6)">6</li>
-				<li onclick = "times()">*</li>
-				<li onclick = "divide()">/</li>
+				<li class="calcul" onclick = "times()">*</li>
+				<li class="calcul" onclick = "divide()">/</li>
 				<li onclick = "typeValue(1)">1</li>
 				<li onclick = "typeValue(2)">2</li>
 				<li onclick = "typeValue(3)">3</li>
-				<li onclick = "plus()">+</li>
-				<li onclick = "minus()">-</li>
+				<li class="calcul" onclick = "plus()">+</li>
+				<li class="calcul" onclick = "minus()">-</li>
 				<li onclick = "typeValue(0)">0</li>
 				<li onclick = "doublezero()">00</li>
 				<li onclick = "dot()">.</li>
-				<li onclick = "persent()">%</li>
-				<li onclick = "equal()">=</li>
+				<li class="calcul" onclick = "persent()">%</li>
+				<li class="calcul" onclick = "equal()">=</li>
 			</ul>
 		</div>
 	</div>
